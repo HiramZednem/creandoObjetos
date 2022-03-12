@@ -23,7 +23,9 @@ class Carros {
         return `La marca del vehiculo es ${this.marca} los km recorridos son de ${this.kmRecorridos} y su precio es de ${this.precio}`;
     }
 }
-
+const verificarNumero = ()=>{
+    
+}
 btnAgregar.addEventListener('click', () => {
     //Variables: 
     let marca
