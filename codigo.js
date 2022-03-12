@@ -1,4 +1,7 @@
-
+/**
+ * Mis variables son un contador que inicia en -1 que es para consultar las poscisiones de mi arreglo,
+ * y este almacena mis objetos tipo Carros.
+ */
 
 //Referencias HTML:
 const btnAgregar = document.querySelector('#add');
@@ -8,6 +11,8 @@ const btnMostrar = document.querySelector('#show');
 //Variables:
 let contador = -1;
 let arreglo = [];
+
+
 
 class Carros {
     marca;
@@ -23,36 +28,32 @@ class Carros {
         return `La marca del vehiculo es ${this.marca} los km recorridos son de ${this.kmRecorridos} y su precio es de ${this.precio}`;
     }
 }
-const verificarNumero = ()=>{
-    
-}
-btnAgregar.addEventListener('click', () => {
-    //Variables: 
-    let marca
-    let kmRecorridos
-    let precio
-
-
-    marca = prompt("Ingrese Marca: ");
-    
+const verificarNumero = (nombreVariable)=>{
+    let dato;
     do{
-        kmRecorridos = parseInt(prompt("Ingrese kmRecorridos "));
+        dato = parseInt(prompt(`Ingrese ${nombreVariable} `));
         
-        if ( isNaN(kmRecorridos) ){
+        if ( isNaN(dato) ){
             alert("Dato ingresado incorrecto, intente nuevamente!");
         }
-    }while( isNaN(kmRecorridos) );
+    }while( isNaN(dato) );
+    return dato;
+}
 
-    do{
-    precio = prompt("Ingrese Precio: ");
+btnAgregar.addEventListener('click', () => {
+    /*
+        Cuando el usuario pulsa el boton agregar llega a este bloque de codigo,
+        en donde se definen las variables que seran agregadas al objeto, y se usa una funcion
+        llamada verificarNumero para que el usuario no ingrese letras y solo pueda ingresar numeros.
 
+        Acto seguido se crea el objeto y se lleva un contador de cuantos objetos se estan agregando.
+    */
+    let marca = prompt('Ingresa marca:');
+    let kmRecorridos = verificarNumero('kmRecorridos');
+    let precio = verificarNumero('precio');
     
-        if (isNaN(precio)){
-            alert("Dato ingresado incorrecto, intente nuevamente!");
-        }
-    }while(isNaN(precio));
 
-arreglo.push(new Carros(marca, kmRecorridos, precio))
+    arreglo.push(new Carros(marca, kmRecorridos, precio))
     contador++;
 });
 
