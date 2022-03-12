@@ -1,7 +1,7 @@
 *{
     margin: 0px;
     padding: 0px;
-    /*background-color: rgba(24,26,27,255);*/
+    background-color: rgba(24,26,27,255);
 }
 .clearfix{
     clear: both;
@@ -27,7 +27,7 @@ header{
     margin-left: 48%;
 }
 
-/*
+
 button{
     background-color: rgba(107,107,107,255);
     color: white;
@@ -35,4 +35,3 @@ button{
 h1{
     color: white;
 }
-*/
